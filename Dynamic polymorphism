@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class vote {
+	
+	public static void main(String[] args) {
+		
+		age a1 = new age();
+		a1.ageDetail();
+		a1.nation();
+		String Age = a1.eligible();
+		citizen c1 = new citizen();
+		String nation = c1.eligible();
+		if(Age=="Yes"&&nation=="No") {
+			System.out.println("You are eligible to vote ");
+		}else {
+			System.out.println("You are not eligible to vote ");
+		}
+	}
+}
+class citizen {
+	
+	String value;
+	void nation() {
+		System.out.println("Enter your nationality");
+		Scanner sc2 = new Scanner(System.in);
+		value = sc2.next();
+	}
+	public String eligible() {
+		if(value=="indian") {
+			String s1= "Yes";
+			return s1;
+		}else
+		{
+			String s2 = "No";
+			return s2;
+		}
+	}
+}
+class age extends citizen{
+	
+	int age;
+	void ageDetail() {
+	System.out.println("enter your age");
+	Scanner sc1 = new Scanner(System.in);
+	age = sc1.nextInt();
+	}
+	public String eligible() {
+	if(age>=18) {
+		
+		String s1 = "Yes";
+		return s1;
+	}else
+	{
+		String s2= "No";
+		return s2;
+	}
+}
+}
