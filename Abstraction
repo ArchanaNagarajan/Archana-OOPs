@@ -1,0 +1,33 @@
+abstract class Vehicle
+	{ 
+	abstract void Bike();   
+	abstract void function();
+	} 
+	
+	class Bike extends Vehicle{ 
+	   
+		int wheel= 2 ;
+		String color= "Black";
+		int speed = 70;
+	    public void Bike() { 
+	       
+	        System.out.println("BIKE");
+	        System.out.println("no of wheel:"+ wheel);
+	        System.out.println("color of bike: "+ color);
+	        System.out.println("Speed of the bike: "+ speed);
+	    } 
+	    void function() { 
+	         
+	    	 System.out.println("It is the most comman mode of road transport for two people");
+	    } 
+	}
+	  public class Car{
+		 
+	    public static void main(String[] args) 
+	    { 
+        
+	    	Vehicle v1 = new Bike();
+	    	v1.Bike();
+	    	v1.function();
+	    } 
+	} 
