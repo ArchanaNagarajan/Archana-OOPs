@@ -1,0 +1,64 @@
+class employee {
+
+	private String name;
+	private int id;
+	private int age;
+	private String designation;
+	private int salary;
+	
+	public String getName()  
+    { 
+      return name; 
+    } 
+	public int getId()  
+    { 
+      return id; 
+    } 
+	public int getAge()  
+    { 
+      return age; 
+    } 
+	public String getDesignation()  
+    { 
+      return designation; 
+    } 
+	public int getSalary()  
+    { 
+      return salary; 
+    } 
+	public void setName(String newName) {
+	    name = newName;
+	  }
+	public void setId(int newId) {
+	    id = newId;
+	  }
+	public void setAge(int newAge) {
+	    age = newAge;
+	  }
+	public void setDesignation(String newDesignation) {
+	    designation = newDesignation;
+	  }
+	public void setSalary(int newSalary) {
+	    salary = newSalary;
+	  }
+}
+ public class details{
+	
+	public static void main(String[] args) {
+		
+		employee emp = new employee();
+	
+		emp.setName("archana");
+		emp.setAge(21);
+		emp.setId(1011);
+		emp.setDesignation("Intern");
+		emp.setSalary(16000);
+	    
+		System.out.println("Name : " + emp.getName());
+		System.out.println("Age : "+ emp.getAge());
+		System.out.println("Employee ID : "+ emp.getId());
+		System.out.println("Designation : "+ emp.getDesignation());
+		System.out.println("Salary : "+ emp.getSalary());
+	}
+	
+}
