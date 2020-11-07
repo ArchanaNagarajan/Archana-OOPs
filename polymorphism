@@ -1,0 +1,66 @@
+class addNum{
+	 
+	int add(int a, int b) {
+		System.out.println("the values are "+ a +" "+ b);
+		int c= a+b;
+		return c;
+	}
+	
+	double add(int a, double b) {
+		System.out.println("the values are "+ a +" "+ b);
+		double c= a+b;
+		return c;
+	}
+}
+class sub{
+	void function() {
+		
+		int n1 = 35 , n2 = 67;
+		System.out.println("the values are "+ n1 +" "+ n2);
+		int subt = n2 - n1;
+		System.out.println("the subtracted value is "+ subt);
+		 System.out.println();
+	}
+}
+class mul extends sub{
+	void function() {
+		
+		int n1 = 54 , n2 = 20 ;
+		System.out.println("the values are "+ n1 +" "+ n2);
+		int mult = (n1 * n2);
+		System.out.println("the multiplied value is "+ mult);
+		 System.out.println();
+	}
+}
+class div extends sub{
+	
+void function() {
+		
+		int n1 = 98 , n2 = 5 ;
+		System.out.println("the values are "+ n1 +" "+ n2);
+		int divi = (n1/n2);
+		System.out.println("the divided value is "+ divi);
+		 System.out.println();
+	}
+}
+public class operator {
+	
+	public static void main(String[] args) {
+		
+		addNum obj1 = new addNum();
+		double d;
+		int e;
+		d = obj1.add(10, 19.8);
+        System.out.println("added value is "+ d );
+        System.out.println();
+		e = obj1.add(80, 45);
+		System.out.println("added value is "+ e );
+		 System.out.println();
+		sub s = new sub();
+		s.function();
+		mul m = new mul();
+		m.function();
+		div d1 = new div();
+		d1.function();
+	}
+}
