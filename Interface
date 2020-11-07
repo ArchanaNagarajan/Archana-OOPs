@@ -1,0 +1,74 @@
+import java.util.Scanner;
+
+interface Bank {
+	 
+	 float rate = 12.0f;
+	 void show();
+	}
+	 
+	class Customer {
+	 
+	 String cust_name;
+	 int cust_id;
+	 
+	 Customer() {
+	  
+		 System.out.println("Enter the customer name");
+		 Scanner sc1 = new Scanner(System.in);
+		 cust_name = sc1.next();
+		 System.out.println("Enter the customer ID");
+		 Scanner sc2 = new Scanner(System.in);
+	     cust_id = sc2.nextInt();
+	 }
+	 
+	 void display() {
+	  
+	  System.out.println("Customer Name = "+cust_name);
+	  System.out.println("Customer Id = "+cust_id);
+	 }
+	}
+	 
+	class Account  extends Customer implements Bank {
+	 
+	 int acc_no;
+	 float acc_bal;
+	   
+	 Account() {
+	  
+	         super();
+		 System.out.println("Enter the account number");
+		 Scanner accountNum = new Scanner(System.in);
+	     acc_no = accountNum.nextInt();
+	     System.out.println("Enter the account balance");
+		 Scanner balance = new Scanner(System.in);
+	     acc_bal= balance.nextFloat();
+	 }
+	 
+	 public void show() {
+	  
+	  display();
+	  System.out.println("Account No. = "+acc_no);
+	  System.out.println("Account Balance = "+acc_bal);
+	 }
+	 
+	 void interest() {
+	  
+		 int noOfYears;
+		 System.out.println("Enter the no of years");
+		 Scanner years = new Scanner(System.in);
+		 noOfYears = years.nextInt();
+	     show();
+	 
+	  float intr = (rate*acc_bal*noOfYears)/100;
+	  System.out.println("Interest = "+intr);
+	 }
+	}
+	 
+	public class AcctDetails {
+	 
+	 public static void main (String[] args) 
+	 {
+	  Account ac = new Account();
+	  ac.interest();
+	 }
+	}
