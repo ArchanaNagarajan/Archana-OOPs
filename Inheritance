@@ -1,0 +1,36 @@
+class Staff{
+	
+	int id = 1211;
+	String department= "ECE";
+	int salary= 25000;
+	
+	void detail() {
+		System.out.println("Staff");
+		System.out.println("ID : "+ id);
+		System.out.println("Department : "+ department);
+		System.out.println("Salary : "+ salary);
+		System.out.println();
+	}
+}
+class Student extends Staff{
+	
+	int id = 2310;
+	String department= "ECE";
+	
+	void details() {
+		System.out.println("Student");
+		System.out.println("ID : "+ id);
+		System.out.println("Department : "+ department);
+	}
+}
+public class college  {
+
+	public static void main(String[] args) {
+		
+		Student s1 = new Student();
+		s1.detail();
+		s1.details();
+		
+	}
+
+}
