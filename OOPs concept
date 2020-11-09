@@ -1,0 +1,231 @@
+import java.util.Scanner;
+
+abstract class Management{
+	
+	abstract void details();
+}
+class students{
+	
+	private static int age ;
+	private static String name;
+	
+	void ageAndName() {
+		
+		System.out.println("enter the age of the student : ");
+		Scanner student = new Scanner(System.in);
+		setAge(student.nextInt());
+		System.out.println("enter the name of the student : ");
+		Scanner nameOf = new Scanner(System.in);
+		setName(nameOf.nextLine());
+		
+	}
+	void check() {
+		
+		switch(getAge()) {
+		
+		case 5:
+			System.out.println("Class of the student : 1");
+			break;	
+		case 6:
+			System.out.println("Class of the student : 2");
+			break;
+		case 7:
+			System.out.println("Class of the student : 3");
+			break;
+		case 8:
+			System.out.println("Class of the student : 4");
+			break;
+		case 9:
+			System.out.println("Class of the student : 5");
+			break;
+		case 10:
+			System.out.println("Class of the student : 6");
+			break;
+		case 11:
+			System.out.println("Class of the student : 7");
+			break;
+		case 12:
+			System.out.println("Class of the student : 8");
+			break;
+		case 13:
+			System.out.println("Class of the student : 9");
+			break;
+		case 14:
+			System.out.println("Class of the student : 10");
+			break;
+		case 15:
+			System.out.println("Class of the student : 11");
+			break;
+		case 16:
+			System.out.println("Class of the student : 12");
+			break;
+		}
+	}
+	public static int getAge() {
+		return age;
+	}
+	public static void setAge(int age) {
+		students.age = age;
+	}
+	public static String getName() {
+		return name;
+	}
+	public static void setName(String name) {
+		students.name = name;
+	}
+	
+}
+class Staffs extends students implements numberOf{
+	
+	private String branches;
+   void Staffs() {
+		
+	   if(getAge()>=15) {
+			
+			System.out.println("enter your branch : ");
+			Scanner sc1 = new Scanner(System.in);
+			 branches = sc1.next();
+	}
+   }
+   students stud = new students();
+   rooms room = new rooms();
+   
+    void display() {
+    	System.out.println();
+	   System.out.println("STUDENT DETAILS");
+	   String names;
+	   names = getName().toUpperCase();
+	   System.out.println("Name of the student : " + names);
+	   System.out.println("Age of the student : "+ getAge());
+	    stud.check();
+	   if(getAge()>=15) {
+	   System.out.println("Branch of the student  : "+ branches);
+	   }
+	   room.classRoom();
+   }
+	
+	public void number() {
+
+		System.out.println("No of students : 2380");
+		System.out.println("No of staffs : 260");
+	
+	}
+}
+class rooms extends students implements numberOf{
+	
+	int room = 50;
+	int classroom = 30;
+	int labRoom = room - classroom ;
+	void classRoom() {
+		for(int i =1;i<=30;i=i+2) {
+			switch(getAge()) {
+			
+			case 5:
+				if(i==1)
+				System.out.println("Room no : "+ i +"," + ++i);
+				break;
+			case 6:
+				if(i==3)
+				System.out.println("Room no : "+ i +"," + ++i);
+				break;
+			case 7:
+				if(i==5)
+				System.out.println("Room no : "+ i +"," + ++i);
+				break;
+			case 8:
+				if(i==7)
+				System.out.println("Room no : "+ i +"," + ++i);
+				break;
+			case 9:
+				if(i==9)
+				System.out.println("Room no : "+ i +"," + ++i);
+				break;
+			case 10:
+				if(i==11)
+				System.out.println("Room no : "+ i +"," + ++i);
+				break;
+			case 11:
+				if(i==13)
+				System.out.println("Room no : "+ i +"," + ++i);
+				break;
+			case 12:
+				if(i==15)
+				System.out.println("Room no : "+ i +"," + ++i);
+				break;
+			case 13:
+				if(i==17)
+				System.out.println("Room no : "+ i +"," + ++i);
+				break;
+			case 14:
+				if(i==19)
+				System.out.println("Room no : "+ i +"," + ++i);
+				break;
+			case 15:
+				if(i==21)
+				System.out.println("Room no : "+ i +"," + ++i + ","+ ++i + "," + ++i);
+				break;
+			case 16:
+				if(i==25)
+				System.out.println("Room no : "+ i +"," + ++i + ","+ ++i + "," + ++i);
+				break;
+			}
+			}
+		}
+	void labRooms() {
+		
+		System.out.println("Chemistry lab: 4");
+		System.out.println("Physics lab: 4");
+		System.out.println("Computer lab: 6");
+	}
+	@Override
+	public void number() {
+		
+		System.out.println("total no of rooms: "+ room);
+		System.out.println("No of Class room : "+ classroom);
+		System.out.println("No of lab rooms : "+ labRoom);
+		
+	}
+}
+interface numberOf{
+	
+	void number();
+	
+}
+class display extends Management {
+	
+	void details() {
+		
+		final String correspondent = "Chitra prasad";
+		final String principal = "Pavithra";
+		final String vicePrincipal = "Sushmitha";
+		
+		System.out.println();
+		System.out.println("SCHOOL DETAILS");
+		System.out.println("Name of the school : NSN SCHOOL");
+		System.out.println("Correspondent : "+correspondent);
+		System.out.println("Principal : "+principal);
+		System.out.println("Vice Principal : "+vicePrincipal);
+		
+	}
+}
+
+public class School  {
+
+	public static void main(String[] args) {
+		
+		students s1 = new students();
+		s1.ageAndName();
+		
+		Staffs s2 = new Staffs();
+		s2.Staffs();
+		
+		rooms r1 = new rooms();
+		display d1 = new display();
+		d1.details();
+		s2.number();
+		r1.number();
+		r1.labRooms();
+		s2.display();
+	}
+
+}
